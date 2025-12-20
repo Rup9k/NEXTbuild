@@ -1,10 +1,15 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { logout } from "../api/auth";
+import "./Header.css";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const isAuth = !!localStorage.getItem("access");
+  
+  // Проверка на админа 
+  const isAdmin = localStorage.getItem("isAdmin") === "true";
 
   const handleLogout = () => {
     logout();
@@ -12,22 +17,53 @@ const Header = () => {
   };
 
   return (
-    <nav style={{ marginBottom: "20px" }}>
-      <Link to="/">Главная</Link>{" "}
-      <Link to="/products">Товары</Link>{" "}
-      <Link to="/news">Новости</Link>{" "}
+    <header className="header">
+      <div className="header-container">
+        <Link to="/" className="logo">NEXTbuild</Link>
 
-      {!isAuth ? (
-        <>
-          <Link to="/login">Вход</Link>{" "}
-          <Link to="/register">Регистрация</Link>
-        </>
-      ) : (
-        <button onClick={handleLogout}>Выход</button>
-      )}
-      {isAuth && <Link to="/admin">Админка</Link>}
+        <nav className="nav">
+          <Link 
+            to="/" 
+            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+          >
+            Главная
+          </Link>
+          
+          <Link 
+            to="/products" 
+            className={`nav-link ${location.pathname === "/products" ? "active" : ""}`}
+          >
+            Товары
+          </Link>
+          
+          <Link 
+            to="/news" 
+            className={`nav-link ${location.pathname === "/news" ? "active" : ""}`}
+          >
+            Новости
+          </Link>
+        </nav>
 
-    </nav>
+        <div className="auth-buttons">
+          {!isAuth ? (
+            <>
+              <Link to="/login" className="login-btn">Вход</Link>
+              <Link to="/register" className="register-btn">Регистрация</Link>
+            </>
+          ) : (
+            <>
+              {isAdmin && (
+                <Link to="/admin" className="admin-btn">Админка</Link>
+              )}
+              <button onClick={handleLogout} className="logout-btn">
+                Выход
+              </button>
+            </>
+          )}
+        </div>
+        
+      </div>
+    </header>
   );
 };
 

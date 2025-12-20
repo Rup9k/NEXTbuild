@@ -3,18 +3,18 @@ import { getUsers, getAllProducts } from "../api/admin";
 import { isAdmin } from "../utils/auth";
 
 const Admin = () => {
-  // Хуки объявляем всегда в начале
+
   const [users, setUsers] = useState([]);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    if (isAdmin()) {          // можно проверку оставить тут
+    if (isAdmin()) {          
       getUsers().then(setUsers);
       getAllProducts().then(setProducts);
     }
   }, []);
 
-  // Проверка роли делается здесь, в JSX
+  // Проверка роли
   if (!isAdmin()) {
     return <h2>Доступ запрещён</h2>;
   }

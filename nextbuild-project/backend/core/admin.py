@@ -6,13 +6,10 @@ from .models import User, Product, Order, News, OrderItem
 # Регистрируем кастомную модель User с кастомным админ-классом
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
-    # Поля, которые будут отображаться в списке
     list_display = ('username', 'email', 'role')
     
-    # Поля для поиска
     search_fields = ('username', 'email')
     
-    # Порядок сортировки
     ordering = ('-date_joined',)
 
     # Настройка формы создания пользователя

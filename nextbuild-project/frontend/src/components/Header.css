@@ -1,0 +1,132 @@
+/* src/components/Header.css */
+.header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px 0;
+    margin-bottom: 30px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #007bff;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.nav-link.active {
+    color: #007bff;
+    font-weight: 500;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.login-btn, .register-btn, .logout-btn, .admin-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-btn {
+    color: #007bff;
+    background: transparent;
+    border: 1px solid #007bff;
+}
+
+.login-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.register-btn {
+    color: white;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.register-btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.logout-btn {
+    color: #dc3545;
+    background: transparent;
+    border: 1px solid #dc3545;
+}
+
+.logout-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.admin-btn {
+    color: white;
+    background-color: #6f42c1;
+    border: 1px solid #6f42c1;
+}
+
+.admin-btn:hover {
+    background-color: #5a32a3;
+    border-color: #4c2889;
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .auth-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

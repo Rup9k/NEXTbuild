@@ -62,7 +62,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
-        # Добавляем роль в payload токена
         token['role'] = user.role
         return token
 
