@@ -1,0 +1,166 @@
+.home-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.home-subtitle {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Карточки */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-description {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Кнопки */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button.primary {
+    background: #007bff;
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background: #f8f9fa;
+    color: #495057;
+    border: 1px solid #dee2e6;
+}
+
+.cta-button.secondary:hover {
+    background: #e9ecef;
+    border-color: #ced4da;
+}
+
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    min-width: 120px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 20px 15px;
+    }
+    
+    .home-title {
+        font-size: 26px;
+    }
+    
+    .home-subtitle {
+        font-size: 16px;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .stats {
+        gap: 20px;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+    }
+}

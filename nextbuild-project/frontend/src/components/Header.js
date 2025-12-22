@@ -8,8 +8,6 @@ const Header = () => {
   const location = useLocation();
   const isAuth = !!localStorage.getItem("access");
   
-  // Проверка на админа 
-  const isAdmin = localStorage.getItem("isAdmin") === "true";
 
   const handleLogout = () => {
     logout();
@@ -42,6 +40,13 @@ const Header = () => {
           >
             Новости
           </Link>
+
+          <Link 
+            to="/contact" 
+            className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`}
+>
+            Контакты
+          </Link>
         </nav>
 
         <div className="auth-buttons">
@@ -52,9 +57,7 @@ const Header = () => {
             </>
           ) : (
             <>
-              {isAdmin && (
                 <Link to="/admin" className="admin-btn">Админка</Link>
-              )}
               <button onClick={handleLogout} className="logout-btn">
                 Выход
               </button>

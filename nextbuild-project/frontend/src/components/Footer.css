@@ -1,0 +1,92 @@
+.footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 30px 0;
+    margin-top: auto; /* Важно! Футер прилипает к низу */
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Логотип и копирайт */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-logo-text:hover {
+    color: #007bff;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Навигация в футере */
+.footer-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #007bff;
+}
+
+/* Контактная информация */
+.footer-contacts {
+    text-align: right;
+}
+
+.footer-contacts p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .footer-contacts {
+        text-align: center;
+    }
+}
