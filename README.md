@@ -45,6 +45,7 @@ python manage.py runserver
    админ: 
      логин:admin2
      пароль:root
+   
    пользователь:
      логин:testuser
      пароль:12345678
