@@ -5,10 +5,15 @@
 3. Открываем терминал GitBash, прописываем по очереди:
 
 cd backend
+
 source venv/Scripts/activate
+
 pip install django
+
 pip install djangorestframework
+
 pip install django-cors-headers
+
 pip install djangorestframework-simplejwt
 
 после установки, перезагружаем vscode
@@ -16,8 +21,11 @@ pip install djangorestframework-simplejwt
 4. Открываем новый терминал GitBash, прописываем по очереди:
 
 deactivate
+
 cd frontend
+
 npm install
+
 npm start
 
 (мы запустили фронт)
@@ -25,7 +33,9 @@ npm start
 4. Открываем новый терминал GitBash, прописываем по очереди:
 
 cd backend
+
 source venv/Scripts/activate
+
 python manage.py runserver
 
 (мы запустили бэк, локально)
